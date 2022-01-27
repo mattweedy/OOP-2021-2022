@@ -15,14 +15,13 @@ public class Main
         System.out.println(misty);
         System.out.println(lucy);
 
-        Cat cat = new Cat("Ginger");
+        Cat ginger = new Cat("Ginger");
 
-        while(cat.getNumLives() > 0)
-        {
-            cat.kill();
+        while (ginger.getNumLives() > 0) {
+            ginger.kill();
         }
-        cat.kill();
-
+        ginger.kill();
+        
         // Tara Misty
         // Tara Tara
         
