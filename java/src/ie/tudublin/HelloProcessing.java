@@ -7,10 +7,11 @@ public class HelloProcessing extends PApplet
 
 	public void settings()
 	{
-		size(500, 500);
+		size(1280, 1024);
 	}
 
 	public void setup() {
+		// colorMode(HSB);
 		colorMode(HSB);
 		background(0);
 
@@ -33,11 +34,14 @@ public class HelloProcessing extends PApplet
 	float x1, y1, x2, y2;
 	float x1dir, x2dir, y1dir, y2dir;
 	float c = 0;
+    float strWeight = 0;
 	
 	public void draw()
 	{	
-		strokeWeight(2);
-		stroke(c, 255, 255);
+		// strokeWeight(0.1f);
+		strWeight = (strWeight + 1f) % 10;
+		strokeWeight(strWeight);
+		stroke(c, 255f, 255f);
 		c = (c + 1f) % 255;
 		line(x1, y1, x2, y2);
 
