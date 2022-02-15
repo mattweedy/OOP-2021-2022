@@ -4,6 +4,7 @@ import processing.core.PApplet;
 
 public class Loops extends PApplet
 {
+    int mode = 0;
 
 	public void settings()
 	{
@@ -12,7 +13,13 @@ public class Loops extends PApplet
 
 	public void setup() {
 		colorMode(HSB);
-		
+	}
+
+    public void keyPressed() {
+		if (key >= '0' && key <= '9') {
+			mode = key - '0';
+		}
+		println(mode);
 	}
 
 	
