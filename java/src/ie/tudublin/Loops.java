@@ -56,13 +56,18 @@ public class Loops extends PApplet {
                 break;
             case 1:
                 background(0);
-                int bars1 = (int) (mouseX / 20.0f);
-                float w2 = width / (float) bars1;
-                for (int i = 0; i < bars1; i++) {
+                int squares = (int) (mouseX / 20.0f);
+				float h = width / (float) squares;
+                for (int i = 0; i < squares; i++) {
                     noStroke();
-                    fill(map(i, 0, bars1, 0, 255), 255, 255);
-                    rect(map(i, 0, bars1, 0, 500), map(i, 0, bars1, 0, 500), w2, height/bars1);
-                    rect(map(i, bars1, 500, 0, 500), map(i, 0, bars1, 0, 500), w2, height/bars1);
+                    fill(map(i, 0, squares, 0, 255), 255, 255);
+                    float x = map(i, 0, squares, 0, width);
+                    square(x, x, h);
+                    square((width - h), x, h);
+                    // rect(map(i, 0, squares, 0, 500), map(i, 0, squares, 0, 500), w, height/squares);
+                    // rect(map(i, squares, 500, 0, 500), map(i, 0, squares, 0, 500), w, height/squares);
+
+
                 }
                 break;
             // map(a,b,c,d,e);
