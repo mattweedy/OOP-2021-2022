@@ -25,6 +25,19 @@ public class Loops extends PApplet
 	
 	public void draw()
 	{
+        switch (mode) {
+            case 1:
+                background(0);
+                int bars = (int)(mouseX / 20f);
+                for (int i = 0; i < bars; i++) {
+                    fill(255, 100, 0);
+                    rect(0, 0, 50, 500);
+                }
+                break;
+        
+            default:
+                break;
+        }
         rect(50, 50, 100, 100);
 	}
 }
