@@ -72,7 +72,7 @@ public class Loops extends PApplet {
 				// float r = width / (float) circles;
                 for (int i = 0; i < circles; i++) {
                     noStroke();
-                    fill(map(i, 0, circles, 0, 255), 255, 255);
+                    fill(map(i, 0, circles, 205, 0), 255, 255);
                     float y = map(i, 0, circles, width, 0);
                     ellipse(250, 250, y, y);
                 }
