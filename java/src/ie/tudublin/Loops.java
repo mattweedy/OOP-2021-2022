@@ -69,11 +69,12 @@ public class Loops extends PApplet {
             case 2:
                 background(0);
                 int circles = (int) (mouseX / 20.0f);
-				float r = width / (float) circles;
+				// float r = width / (float) circles;
                 for (int i = 0; i < circles; i++) {
                     noStroke();
                     fill(map(i, 0, circles, 0, 255), 255, 255);
-                    ellipse(250, 250, r, r*2);
+                    float y = map(i, 0, circles, width, 0);
+                    ellipse(250, 250, y, y);
                 }
                 break;
             // map(a,b,c,d,e);
