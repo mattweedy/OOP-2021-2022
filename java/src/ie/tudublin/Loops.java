@@ -63,11 +63,7 @@ public class Loops extends PApplet {
                     fill(map(i, 0, squares, 0, 255), 255, 255);
                     float x = map(i, 0, squares, 0, width);
                     square(x, x, h);
-                    square((width - h), x, h);
-                    // rect(map(i, 0, squares, 0, 500), map(i, 0, squares, 0, 500), w, height/squares);
-                    // rect(map(i, squares, 500, 0, 500), map(i, 0, squares, 0, 500), w, height/squares);
-
-
+                    square((width - h) - x, x, h);
                 }
                 break;
             // map(a,b,c,d,e);
