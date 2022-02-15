@@ -17,6 +17,7 @@ public class Loops extends PApplet
 
 	
 	public void draw()
-	{	
+	{
+        rect(50, 50, 100, 100);
 	}
 }
