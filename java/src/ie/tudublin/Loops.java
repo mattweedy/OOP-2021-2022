@@ -94,6 +94,24 @@ public class Loops extends PApplet {
                         circle(x, y, d);
                     }
                 }
+                break;
+            case 4:
+                background(0);
+                float scale = 41.6666666667f;
+                float x = scale;
+                float y = scale;
+                stroke(120, 255, 255);
+                fill(0);
+                // int cols = width/scale;
+                // int rows = height/scale;
+                for (int i = 0; i < width-scale; i+=scale) {
+                    line(x, scale, x, (height-scale));
+                    line(scale, y, (width-scale), y);
+                    x += scale;
+                    y += scale;
+                }
+                break;
+
             // map(a,b,c,d,e);
             // a = inputvalue
             // b - c - start and end of the first range
