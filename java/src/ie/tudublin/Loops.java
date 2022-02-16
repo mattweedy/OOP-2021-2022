@@ -89,7 +89,7 @@ public class Loops extends PApplet {
                         noStroke();
                         float x = map(i, 0, circles2 - 1, d / 2, width - (d / 2.0f));
                         float y = map(j, 0, circles2 - 1, d / 2.0f, width - (d / 2.0f));
-                        float c = map((i + j + offset), 0, (circles2 * 2), 0, 255);
+                        float c = map((i + j + offset), j, (circles2 * 2), 0, 255) % 256;
                         fill(c, 255, 255);
                         circle(x, y, d);
                     }
