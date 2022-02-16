@@ -104,7 +104,7 @@ public class Loops extends PApplet {
                 fill(0);
                 // int cols = width/scale;
                 // int rows = height/scale;
-                for (int i = 0; i < width-scale; i+=scale) {
+                for (int i = 0; i < width-(scale*2); i+=scale) {
                     line(x, scale, x, (height-scale));
                     line(scale, y, (width-scale), y);
                     x += scale;
