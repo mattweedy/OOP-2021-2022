@@ -109,6 +109,8 @@ public class Loops extends PApplet {
                     line(scale, y, (width-scale), y);
                     x += scale;
                     y += scale;
+                    // text(i, x, border * 0.5F);
+                    // text(i, border * 0.5f, x);
                 }
                 break;
 
