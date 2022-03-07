@@ -12,6 +12,7 @@ public class LifeBoard {
 
     public LifeBoard(int size, PApplet pa) {
         board = new boolean[size][size];
+        next = new boolean[size][size];
         this.size = size;
         this.pa = pa;
         cellSize = pa.width / (float)size; 
