@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class LifeBoard {
     boolean[][] board;
-    boolean[][] next;
+    // boolean[][] next;
 
     int size;
     float cellSize;
@@ -12,7 +12,7 @@ public class LifeBoard {
 
     public LifeBoard(int size, PApplet pa) {
         board = new boolean[size][size];
-        next = new boolean[size][size];
+        // next = new boolean[size][size];
         this.size = size;
         this.pa = pa;
         cellSize = pa.width / (float)size; 
@@ -35,6 +35,7 @@ public class LifeBoard {
         // if cell isAlive
         // 2 - 3 alive neighbours it survives
         // if a dead cell has 3 neighbours - comes to life
+        boolean[][] next = new boolean[size][size];
 
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
@@ -57,10 +58,7 @@ public class LifeBoard {
             }
         }
 
-        boolean[][] temp;
-        temp = board;
         board = next;
-        next = temp;
     }
 
     public int countCellsAround(int row, int col) {
@@ -68,10 +66,11 @@ public class LifeBoard {
 
         for (int i = row-1; i <= row+1; i++) {
             for (int j = col-1; j <= col+1 ; j++) {
-                if (!(i == row && j == col)) {
-                    if (isAlive(i, j)) count++;
-                }
+                if (isAlive(i, j)) count++;
             }
+        }
+        if (isAlive(row, col)) {
+            count--;
         }
 
         return count;
@@ -92,16 +91,17 @@ public class LifeBoard {
             for (int col = 0; col < size; col++) {
                 // float x = PApplet.map(col, 0, size, 0, pa.width);
                 // float y = PApplet.map(col, 0, size, 0, pa.height);
-                float x = cellSize * col; // same as map
-                float y = cellSize * row; // same as map
+                // float x = cellSize * col; // same as map
+                // float y = cellSize * row; // same as map
 
                 if (board[row][col]) {
                     pa.fill(0, 255, 0);
                 } else {
                     pa.noFill();
                 }
-
-                pa.square(x, y, cellSize);
+                // not needed to generate and discard x and y value everytime
+                // by storing in variables
+                pa.square(cellSize*col, cellSize*row, cellSize);
             }
         }
     }
