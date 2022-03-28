@@ -11,15 +11,22 @@ public class Star {
     private float zG;
     private float absMag;
 
+    @Override
+    public String toString() {
+        return "Star [absMag=" + absMag + ", displayName=" + displayName + ", dist=" + dist + ", hab=" + hab + ", xG="
+                + xG + ", yG=" + yG + ", zG=" + zG + "]";
+    }
 
     public Star(TableRow tr) {
-        this(tr.getInt("Hab?") == 1,
-        tr.getString("Display Name"),
-        tr.getFloat("Distance"),
-        tr.getFloat("Xg"),
-        tr.getFloat("Yg"),
-        tr.getFloat("Zg"),
-        tr.getFloat("AbsMag")
+        this(
+            tr.getInt("Hab?") == 1,
+            tr.getString("Display Name"),
+            tr.getFloat("Distance"),
+            tr.getFloat("Xg"),
+            tr.getFloat("Yg"),
+            tr.getFloat("Zg"),
+            tr.getFloat("AbsMag")
+        );
     }
 
     public Star(boolean hab, String displayName, float dist, float xG, float yG, float zG, float absMag) {
