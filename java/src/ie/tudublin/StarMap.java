@@ -10,7 +10,7 @@ public class StarMap extends PApplet {
 
     ArrayList<Star> stars = new ArrayList<Star>();
 
-    float border;
+    public float border;
 
     void drawGrid()
     {
@@ -20,7 +20,7 @@ public class StarMap extends PApplet {
         for (int i = -5; i <= 5; i++) {
             float x = map(i, -5, 5, border, width - border);
             line(x, border, x, height - border); // draws vert lines
-            line(border, x, width - border, x); // draws horiz lines
+            line(border, x, width - border, x); // draws horiz(?) lines
             fill(255);
             text(i, x, border * 0.5f);
             text(i, border * 0.5f, x);
@@ -63,11 +63,15 @@ public class StarMap extends PApplet {
 
     public void drawStars()
     {
+        for (Star s:stars) {
+            s.render(this);
+        }
     }
 
     public void draw() 
     {
         background(0);
         drawGrid();
+        drawStars();
     }
 }
